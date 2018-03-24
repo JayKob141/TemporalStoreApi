@@ -1,0 +1,28 @@
+{
+  "name": "temporalstoreapi",
+  "version": "1.0.0",
+  "description": "An exercise of express api",
+  "main": "index.js",
+  "scripts": {
+    "test-core": "mocha test/core"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayKob141/TemporalStoreApi.git"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "shop",
+    "example"
+  ],
+  "author": "Jacob Meneses",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JayKob141/TemporalStoreApi/issues"
+  },
+  "homepage": "https://github.com/JayKob141/TemporalStoreApi#readme",
+  "devDependencies": {
+    "mocha": "^5.0.5"
+  }
+}
