@@ -1,4 +1,6 @@
 var assert = require('assert');
+var Core = require('../../src/core');
+var Discounts = require('../../src/core/discounts');
 
 var productList;
 
@@ -19,16 +21,41 @@ describe('Products', function() {
 
     });
 
-    it('should apply disccount to list of products',function(){
-        assert.ok(false);
+    it('should apply 2x1 disccount to PANTS',function(){
+        var item = {
+          Code: 'PANTS',
+          quantity: 3,
+          Price: 5.0
+        }
+
+        var response = Discounts.applyDiscountIfAny(item);
+        var subtotal = response.subTotal;
+        assert.equal(subtotal, 10, "The subtotal is not correct");
+    });
+
+    it('should apply bulk disccount to TSHIRT',function(){
+        var item = {
+          Code: 'TSHIRT',
+          quantity: 4,
+          Price: 20.0
+        }
+
+        var response = Discounts.applyDiscountIfAny(item);
+        var subtotal = response.subTotal;
+        assert.equal(subtotal, 76, "The subtotal is not correct");
     });
     
     it('should not apply disccount to list of products',function(){
-        assert.ok(false);
-    });
 
-    it('should do checkout',function(){
-        assert.ok(false);
+        var productList = [
+          { Code:'PANTS', Price: 5.0 },
+          { Code:'TSHIRT', Price: 20.0 },
+          { Code:'HAT', Price: 7.5 }
+        ];
+
+        var response = 0;
+        response = Core.checkout(productList);
+        assert.equal(response.total, 32.5, "The total ("+response.total+") is not correct");
     });
 
   });
