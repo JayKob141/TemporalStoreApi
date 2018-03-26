@@ -1,0 +1,10 @@
+var path = require('path')
+
+process.env.NODE_ENV="test";
+
+module.exports = {
+  'config': path.resolve('src/sequelize', 'config','config.json'),
+  'models-path': path.resolve('src/sequelize', 'models'),
+  'seeders-path': path.resolve('src/sequelize', 'seeders'),
+  'migrations-path': path.resolve('src/sequelize', 'migrations')
+}
