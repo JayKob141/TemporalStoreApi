@@ -8,8 +8,6 @@ module.exports = {
 
     /**
      * El objeto cart trae un array de objetos tipo producto, con la cantidad
-     * TODO: Sanitizar el objeto cart 
-     *  [ {Code:'TSHIRT'}, {Code:'TSHIRT'} ];
      */
     checkout: function(cart){
 
