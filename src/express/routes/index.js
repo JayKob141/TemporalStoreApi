@@ -2,7 +2,7 @@ const presenter = require('../../presenter');
 
 module.exports = (app) => {
 
-    app.get('/products', (req, res) => {
+    app.get('/api/products', (req, res) => {
         var promise = presenter.readProducts();
         promise.then(result=>{
             res.send(result);
@@ -11,8 +11,13 @@ module.exports = (app) => {
         });
     });
 
-    app.post('/checkout', (req, res) => {
-
+    app.post('/api/checkout', (req, res) => {
+        var promise = presenter.checkout(req.body.codes);
+        promise.then(result=>{
+            res.send(result);
+        }).catch(error=>{
+            res.send(error);
+        });
     });
 
 
