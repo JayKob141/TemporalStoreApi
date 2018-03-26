@@ -10,9 +10,10 @@ var applyBulkPurchase = function(item, newPrice){
 
 var Discounts = {
     'PANTS' : function(item){ 
+        var condition = item.quantity >= 2;
         return {
-            subTotal: apply2byOne(item),
-            applied : true 
+            subTotal: condition ? apply2byOne(item) : item.Price,
+            applied : condition 
         }
     },
     'TSHIRT': function(item) {

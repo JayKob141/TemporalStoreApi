@@ -48,9 +48,9 @@ describe('Products', function() {
     it('should not apply disccount to list of products',function(){
 
         var productList = [
-          { Code:'PANTS', Price: 5.0 },
-          { Code:'TSHIRT', Price: 20.0 },
-          { Code:'HAT', Price: 7.5 }
+          { Code:'PANTS', Price: 5.0, quantity: 1 },
+          { Code:'TSHIRT', Price: 20.0, quantity: 1 },
+          { Code:'HAT', Price: 7.5, quantity: 1 }
         ];
 
         var response = 0;

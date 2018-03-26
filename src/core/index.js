@@ -15,7 +15,8 @@ module.exports = {
 
         var total = 0;
         cart.forEach(element => {
-           total += element.Price  * element.quantity;
+           var withDiscount = Discounts.applyDiscountIfAny(element);
+           total += withDiscount.subTotal;
         });
 
         return {
