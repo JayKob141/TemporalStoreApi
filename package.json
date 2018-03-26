@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test-core": "mocha test/core",
-    "test-db": "mocha test/db"
+    "test-db": "mocha test/db",
+    "start": "node src/express/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "dependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "express": "^4.16.3",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.4",
