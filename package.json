@@ -34,6 +34,8 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "express": "^4.16.3",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.4",
