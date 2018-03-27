@@ -1,11 +1,21 @@
 var models = require('../sequelize/models');
 var Product = models.Product;
+var User = models.User;
 const Core = require('../core');
 
 module.exports = {
     readProducts: () => {
         var promise = Product.findAll({raw:true});
         return promise;
+    },
+
+    readUserByAuthToken: (token)=>{
+        return User.findOne({
+            where:{
+                token: token
+            },
+            raw: true
+        });
     },
 
     // arrayOfCodes comes in form ['CODE1','CODE2']
