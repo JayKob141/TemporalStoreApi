@@ -1,11 +1,29 @@
 {
   "test": {
     "username": "postgres",
-    "password": "",
+    "password": "example",
     "database": "postgres",
-    "host": "192.168.0.109",
+    "host": "127.0.0.1",
     "port": "5432",
     "dialect": "postgresql"
+  },
+  "dockerized": {
+    "username": "postgres",
+    "password": "example",
+    "database": "postgres",
+    "host": "storeapidb",
+    "port": "5432",
+    "dialect": "postgresql",
+    "use_env_variables": false
+  },
+  "dockerized2": {
+    "username": "postgres",
+    "password": "example",
+    "database": "postgres",
+    "host": "storeapi-db-2",
+    "port": "5432",
+    "dialect": "postgresql",
+    "use_env_variables": false
   },
   "development": {
     "username": "root",
