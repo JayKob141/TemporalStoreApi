@@ -1,14 +1,32 @@
 # TemporalStoreApi
 An exercise of express api (shop-cart api)
 
-# Start the project (docker with docker-compose)
+# Start the project (docker with docker-compose, the prefered way)
 
 Just run **docker-compose up -d**  on a terminal.
 
 # Start the project (docker without docker-compose)
-Just run the **without-docker-compose** script.
+Just run the **without-docker-compose** script. and replace 
+-   "storeapidb" with "storeapi-db-2" 
+-   "storeapiexpress" with "storeapi-express-2" 
+
+in the rest of the commands of this document. 
+
+# Get sample tokens
+Execute the next line to obtain two example users with tokens for authentication requests
+
+*docker exec storeapidb psql -c "SELECT * FROM \\"Users\\";" -U postgres*
+
+# Make an api call
+The following example command makes a request to the api.
+
+```bash
+curl -X POST -d '{"codes":["PANTS","TSHIRT"]}' -H  "Authorization: Bearer 66628dd626ebd4e423639e423583f07653df4a7cb7b747c178c1b09c66dea844" -H "Content-Type: application/json" http://127.0.0.1:3000/api/checkout
+```
 
 # Run the tests 
+Run tests for each part of the project by executing each line below:
+
 docker exec storeapiexpress npm run test-core 
 
 docker exec storeapiexpress npm run test-api
