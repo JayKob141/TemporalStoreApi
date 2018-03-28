@@ -15,7 +15,9 @@ in the rest of the commands of this document.
 # Get sample tokens
 Execute the next line to obtain two example users with tokens for authentication requests
 
+```bash
 *docker exec storeapidb psql -c "SELECT * FROM \\"Users\\";" -U postgres*
+```
 
 # Make an api call
 The following example command makes a request to the api.
@@ -27,11 +29,13 @@ curl -X POST -d '{"codes":["PANTS","TSHIRT"]}' -H  "Authorization: Bearer 66628d
 # Run the tests 
 Run tests for each part of the project by executing each line below:
 
+```bash
 docker exec storeapiexpress npm run test-core 
 
 docker exec storeapiexpress npm run test-api
 
 docker exec storeapiexpress npm run test-db
+```
 
 # Explanation
 The project is divided in 4 main categories
