@@ -8,6 +8,11 @@ var env       = process.env.NODE_ENV || 'test';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
+console.log('models/inde: dirname  and node env = ');
+console.log(__dirname);
+console.log(env);
+console.log(config);
+
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {

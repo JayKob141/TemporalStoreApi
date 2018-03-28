@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+
+  storeapidb:
+    image: postgres:10.3
+    environment:
+      POSTGRES_PASSWORD: example 
+    ports:
+      - "5432:5432"
+    container_name: "storeapidb"
+  storeapiexpress:
+    image: node:9.9.0
+    volumes:
+      - "./:/opt/shop-api"
+    working_dir: "/opt/shop-api"
+    command: "sh initial.sh"
+    ports:
+      - "3000:3000"
+    container_name: "storeapiexpress"
+    environment:
+      - NODE_ENV=dockerized
