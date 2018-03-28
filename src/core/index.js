@@ -1,13 +1,18 @@
 var Discounts = require('./discounts');
 
-/**
- * Los productos se definen como un objeto con los campos 
- * Code, Name, Price  
- */
+
 module.exports = {
 
     /**
-     * El objeto cart trae un array de objetos tipo producto, con la cantidad
+     *  cart is an array with the following structure
+     * [{
+     *      Code: 'PANTS',
+     *      quantity: 1,
+     *      Price: 30
+     *  },{
+     *   ...
+     *  }]
+     * the Price on each object is the price per unit
      */
     checkout: function(cart){
 
