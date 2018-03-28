@@ -26,7 +26,7 @@ The following example command makes a request to the api.
 curl -X POST -d '{"codes":["PANTS","TSHIRT"]}' -H  "Authorization: Bearer 66628dd626ebd4e423639e423583f07653df4a7cb7b747c178c1b09c66dea844" -H "Content-Type: application/json" http://127.0.0.1:3000/api/checkout
 ```
 
-The body of the request contains a JSON object that contains a "codes" field that represents the list of codes that the user wants to checkout.
+The body of the request contains a JSON object that contains a field named "codes" that represents the list of codes that the user wants to checkout.
 
 The products from the specification of the problem are in the next table:
 
