@@ -6,7 +6,7 @@ An exercise of express api (shop-cart api)
 Just run **docker-compose up -d**  on a terminal.
 
 # Start the project (docker without docker-compose)
-Just run the **without-docker-compose** script. and replace 
+Just run the **without-docker-compose.sh** script. and replace 
 -   "storeapidb" with "storeapi-db-2" 
 -   "storeapiexpress" with "storeapi-express-2" 
 
@@ -16,7 +16,7 @@ in the rest of the commands of this document.
 Execute the next line to obtain two example users with tokens for authentication requests. It is required for all the endpoints of this project.
 
 ```bash
-*docker exec storeapidb psql -c "SELECT * FROM \\"Users\\";" -U postgres*
+docker exec storeapidb psql -c "SELECT * FROM \\"Users\\";" -U postgres
 ```
 
 # Make an api call
